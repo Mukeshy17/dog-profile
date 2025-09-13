@@ -1,12 +1,60 @@
-# React + Vite
+## Getting Started
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Prerequisites
 
-Currently, two official plugins are available:
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [MongoDB](https://www.mongodb.com/) running locally or in the cloud
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Backend Setup
 
-## Expanding the ESLint configuration
+1. Install dependencies:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+   ```sh
+   cd backend
+   npm install
+   ```
+
+2. (Optional) Set MongoDB URI in environment:
+
+   ```sh
+   export MONGO_URI="your_mongodb_connection_string"
+   ```
+
+   By default, connects to `mongodb://127.0.0.1:27017/dogProfiles`.
+
+3. Start the backend server:
+
+   ```sh
+   npm start
+   ```
+
+   The backend runs on [http://localhost:5000](http://localhost:5000).
+
+---
+
+### 2. Frontend Setup
+
+1. Install dependencies:
+
+   ```sh
+   cd frontend/dog-profile
+   npm install
+   ```
+
+2. Configure backend URL in `.env` (default is `http://localhost:5000`):
+
+   ```
+   VITE_BACKEND_URL=http://localhost:5000
+   ```
+
+3. Start the frontend dev server:
+
+   ```sh
+   npm run dev
+   ```
+
+   The frontend runs at [http://localhost:5173](http://localhost:5173) by default.
+
+---
+
+Now you can open the frontend in your browser, fill out the form to create a user profile, and see the list of users below the form, each with a random dog image.
